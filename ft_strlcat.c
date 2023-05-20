@@ -6,7 +6,7 @@
 /*   By: shisaeki <shisaeki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:57:02 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/19 18:05:15 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:06:31 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
  
@@ -17,24 +17,30 @@ size_t	ft_strlcat(
 	const char * restrict src,
 	size_t dstsize)
 {
-	size_t i;
-	size_t len_max;
+	char *d;
+	const char *s;
+	size_t n;
 	size_t len_dst;
-	size_t len_src;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	if (dstsize <= len_dst)
-		return (dstsize + len_src);
-	len_max = dstsize - len_dst;
-	i = 0;
-	while (i < len_max)
+	d = dst;
+	s = src;
+	n = dstsize;
+	while (n-- != 0 && *d != '\0')
+		d++;
+	len_dst = d - dst;
+	n = dstsize - len_dst;
+	if (n == 0)
+		return (len_dst + ft_strlen(s));
+	while (*s != '\0')
 	{
-		if (src[i] == '\0')
-			break;
-		dst[len_dst + i] = src[i];
-		i++;
+		if (n != 1)
+		{
+			*d = *s;
+			d++;
+			n--;
+		}
+		s++;
 	}
-	dst[len_dst + i] = '\0';
-	return (len_dst + len_src);
+	*d = '\0';
+	return (len_dst + (s - src));
 }
