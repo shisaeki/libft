@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:42:06 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/19 18:15:57 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:57:11 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,28 @@ int skip_space(char c)
 	return (0);
 }
 
-int ft_atoi(const char *str)
+long	get_long(const char *str, int sign)
 {
-	int nbr;
-	int sign;
+	long nbr;
 	size_t i;
 
 	nbr = 0;
-	sign = 1;
+	i = 0;
+	while ('0' <= str[i] && str[i] <= '9' && str[i] != '\0')
+	{
+		nbr *= 10;
+		nbr += str[i] - '0';
+		i++;
+	}
+	return (sign * nbr);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	sign;
+	size_t i;
+
+	sing = 1;
 	i = 0;
 	while (str[i] != '\0' && skip_space(str[i]))
 		i++;
@@ -37,11 +51,5 @@ int ft_atoi(const char *str)
 			sign *= -1;
 		i++;
 	}
-	while ('0' <= str[i] && str[i] <= '9' && str[i] != '\0')
-	{
-		nbr *= 10;
-		nbr += str[i] - '0';
-		i++;
-	}
-	return (sign * nbr);
+	return (get_long(&str[i], sign));
 }
