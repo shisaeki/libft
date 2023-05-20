@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:02:44 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/20 18:26:34 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:15:44 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (i < len_s1 - count)
 	{
 		if (!is_exist_char(*s1, set))
+		{
 			result[i] = *s1;
-		i++;
+			i++;
+		}
 		s1++;
 	}
 	return (result);
