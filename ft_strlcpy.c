@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 17:11:37 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/19 17:48:34 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:51:16 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcpy(
 	size_t	i;
 
 	len = ft_strlen(src);
+	if (dstsize == 0)
+		return (len);
 	i = 0;
 	while (i < dstsize - 1)
 	{
@@ -29,24 +31,6 @@ size_t	ft_strlcpy(
 		dst[i] = src[i];
 		i++;
 	}
-	dst[dstsize] = '\0';
+	dst[i] = '\0';
 	return (len);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char *dst1 = calloc(10, sizeof(char));
-	char *dst2 = calloc(10, sizeof(char));
-	char *src1 = calloc(10, sizeof(char));
-	char *src2 = calloc(10, sizeof(char));
-	memset(src1, 'z', 9);
-	memset(src2, 'z', 9);
-
-	size_t expected = strlcpy(dst1, src1, 0);
-	size_t actual = ft_strlcpy(dst2, src2, 0);
-	printf("%zu\n", expected);
-	printf("%zu\n", actual);
 }
