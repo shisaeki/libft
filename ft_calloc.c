@@ -6,27 +6,19 @@
 /*   By: shisaeki <shisaeki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:07:38 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/19 16:15:46 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:00:00 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void *ptr;
-	char *str;
-	size_t i;
+	void	*ptr;
 
-	ptr = malloc(count * size);
+	ptr = (void *)malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	str = (char *)ptr;
-	i = 0;
-	while (i < count * size)
-	{
-		str[i] = '\0';
-		i++;
-	}
+	ft_bzero(ptr, count);
 	return (ptr);
 }
