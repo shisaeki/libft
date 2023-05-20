@@ -6,7 +6,7 @@
 #    By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 16:08:08 by shisaeki          #+#    #+#              #
-#    Updated: 2023/05/20 14:12:44 by shisaeki         ###   ########.fr        #
+#    Updated: 2023/05/20 16:11:01 by shisaeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS = ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
 		ft_putchar_fd.c \
+		ft_putstr_fd.c \
 
 OBJS = $(SRCS:.c=.o)
 
