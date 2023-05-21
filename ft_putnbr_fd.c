@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:19:14 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/20 16:30:18 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:40:31 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (10 <= n)
 	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10 + '0', fd);
+		ft_putchar_fd(n % 10 + '0', fd);
 	}
 	else
 	{

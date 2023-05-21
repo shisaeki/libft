@@ -6,26 +6,11 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:29:08 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/21 17:15:07 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:01:22 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	n_pow(int n)
-{
-	int pow;
-
-	pow = 1;
-	while (n)
-	{
-		pow *= 10;
-		n--;
-	}
-	return(pow);
-}
-
-#include <stdio.h>
 
 size_t get_num_digits(int n)
 {
@@ -54,16 +39,17 @@ char *ft_itoa(int n)
 	str = (char *)malloc(sizeof(char) * (num_digits + 1));
 	if (!str)
 		return (NULL);
-	while (i < num_digits)
+	str[num_digits] = '\0';
+	while (0 < n)
 	{
-		str[i] = n / n_pow(num_digits - i - 1) + '0';
-		n = n % n_pow(num_digits - i - 1) + '0';
-		i++;
-		printf("%zu\n", i);
+		str[num_digits - 1] = n % 10;
+		n /= 10;
+		num_digits--;
 	}
-	str[i] = '\0';
 	return (str);
 }
+
+#include <stdio.h>
 
 int main()
 {

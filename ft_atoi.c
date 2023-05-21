@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:42:06 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/21 15:08:26 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/21 19:43:07 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ long	get_long(const char *str, int sign)
 		}
 		else
 		{
-			if ((-1 * nbr ==  LONG_MIN / 10 && -1 * str[i] < LONG_MIN % 10 + '0')
+			if ((-1 * nbr ==  LONG_MIN / 10 && -1 * (str[i] - '0') < (LONG_MIN % 10))
 				|| (-1 * nbr < LONG_MIN / 10))
 				return (LONG_MIN);
 		}
