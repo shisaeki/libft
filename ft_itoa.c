@@ -6,54 +6,50 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:29:08 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/21 20:01:22 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:53:49 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t get_num_digits(int n)
+long int	ft_abs(long int nbr)
 {
-	int nbr;
-	size_t i;
+	return ((nbr < 0) ? -nbr : nbr);
+}
 
-	nbr = n;
-	i = 0;
-	if (nbr < 0)
-		i++;
-	while (nbr)
+int			ft_len(long int nbr)
+{
+	int		len;
+
+	len = (nbr <= 0) ? 1 : 0;
+	while (nbr != 0)
 	{
-		nbr /= 10;
-		i++;
+		nbr = nbr / 10;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
-char *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	char *str;
-	size_t num_digits;
-	size_t i;
+	int		len;
+	int		sign;
+	char	*c;
 
-	num_digits = get_num_digits(n);
-	str = (char *)malloc(sizeof(char) * (num_digits + 1));
-	if (!str)
-		return (NULL);
-	str[num_digits] = '\0';
-	while (0 < n)
+	sign = (n < 0) ? -1 : 1;
+	len = ft_len(n);
+	c = (char *)malloc(sizeof(char) * len + 1);
+	if (c == NULL)
+		return (0);
+	c[len] = '\0';
+	len--;
+	while (len >= 0)
 	{
-		str[num_digits - 1] = n % 10;
-		n /= 10;
-		num_digits--;
+		c[len] = '0' + ft_abs(n % 10);
+		n = ft_abs(n / 10);
+		len--;
 	}
-	return (str);
+	if (sign == -1)
+		c[0] = '-';
+	return (c);
 }
-
-#include <stdio.h>
-
-int main()
-{
-	int n = 123;
-	printf("%s\n", ft_itoa(n));
-}
-

@@ -6,7 +6,7 @@
 #    By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 16:08:08 by shisaeki          #+#    #+#              #
-#    Updated: 2023/05/21 18:41:34 by shisaeki         ###   ########.fr        #
+#    Updated: 2023/05/22 13:54:23 by shisaeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS = ft_atoi.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_split.c \
+		ft_itoa.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 		ft_strtrim.c \
