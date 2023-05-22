@@ -6,7 +6,7 @@
 /*   By: shisaeki <shisaeki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:47:12 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/22 10:49:35 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:47:55 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = lst;
+	new->next = *lst;
+	*lst = new;
 }

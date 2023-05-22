@@ -6,7 +6,7 @@
 #    By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 16:08:08 by shisaeki          #+#    #+#              #
-#    Updated: 2023/05/22 13:54:23 by shisaeki         ###   ########.fr        #
+#    Updated: 2023/05/22 14:37:57 by shisaeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,15 @@ SRCS = ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 
+BONUS_SRCS = ft_lstnew.c \
+			 ft_lstadd_front.c \
+			 ft_lstsize.c \
+			 ft_lstlast.c \
+			 ft_lstadd_back.c \
+
 OBJS = $(SRCS:.c=.o)
+
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 TARGET = libft.a
 
@@ -59,6 +67,9 @@ all: $(TARGET)
 
 $(TARGET) : $(OBJS)
 	ar rcs $(TARGET) $(OBJS)
+
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(TARGET) $(OBJS) $(BONUS_OBJS)
 
 clean:
 	-rm -f $(OBJS)
