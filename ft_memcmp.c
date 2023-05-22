@@ -6,13 +6,13 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:06:08 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/19 15:55:29 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:53:24 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t size)
 {
 	unsigned char	*ptr_s1;
 	unsigned char	*ptr_s2;

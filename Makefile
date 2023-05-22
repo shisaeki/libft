@@ -6,7 +6,7 @@
 #    By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 16:08:08 by shisaeki          #+#    #+#              #
-#    Updated: 2023/05/22 14:37:57 by shisaeki         ###   ########.fr        #
+#    Updated: 2023/05/22 17:01:28 by shisaeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,9 @@ BONUS_SRCS = ft_lstnew.c \
 			 ft_lstsize.c \
 			 ft_lstlast.c \
 			 ft_lstadd_back.c \
+			 ft_lstdelone.c \
+			 ft_lstclear.c \
+			 ft_lstiter.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -72,7 +75,7 @@ bonus: $(OBJS) $(BONUS_OBJS)
 	ar rcs $(TARGET) $(OBJS) $(BONUS_OBJS)
 
 clean:
-	-rm -f $(OBJS)
+	-rm -f $(OBJS) $(BONUS_OBJS)
 fclean: clean
 	-rm -f $(TARGET)
 re: fclean all

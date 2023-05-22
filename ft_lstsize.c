@@ -6,7 +6,7 @@
 /*   By: shisaeki <shisaeki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:50:07 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/22 14:34:30 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:53:06 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int size;
+	int	size;
 
 	size = 1;
 	if (lst == NULL)

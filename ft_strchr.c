@@ -6,18 +6,18 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 17:45:12 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/19 14:39:01 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:56:58 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char *ptr;
-	unsigned char uc;
-	size_t len;
-	size_t i;
+	char			*ptr;
+	unsigned char	uc;
+	size_t			len;
+	size_t			i;
 
 	ptr = NULL;
 	uc = (unsigned char)c;

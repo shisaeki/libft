@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 14:23:16 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/22 15:54:30 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:44:19 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last;
+	t_list	*last;
 
 	if (!*lst)
 		*lst = new;

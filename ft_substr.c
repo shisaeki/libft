@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:40:47 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/20 17:50:24 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:03:40 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *sub;
-	size_t len_s;
-	unsigned int i;
+	char			*sub;
+	size_t			len_s;
+	unsigned int	i;
 
 	len_s = ft_strlen(s);
 	if (len_s < start)

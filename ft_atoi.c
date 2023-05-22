@@ -6,13 +6,13 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:42:06 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/21 19:43:07 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:39:15 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int skip_space(char c)
+int	skip_space(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v'
 		|| c == '\f' || c == '\r' || c == ' ')
@@ -22,8 +22,8 @@ int skip_space(char c)
 
 long	get_long(const char *str, int sign)
 {
-	long nbr;
-	size_t i;
+	long	nbr;
+	size_t	i;
 
 	nbr = 0;
 	i = 0;
@@ -37,7 +37,8 @@ long	get_long(const char *str, int sign)
 		}
 		else
 		{
-			if ((-1 * nbr ==  LONG_MIN / 10 && -1 * (str[i] - '0') < (LONG_MIN % 10))
+			if ((-1 * nbr == LONG_MIN / 10 && -1
+					* (str[i] - '0') < (LONG_MIN % 10))
 				|| (-1 * nbr < LONG_MIN / 10))
 				return (LONG_MIN);
 		}
@@ -50,8 +51,8 @@ long	get_long(const char *str, int sign)
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	size_t i;
+	int		sign;
+	size_t	i;
 
 	sign = 1;
 	i = 0;
@@ -65,18 +66,3 @@ int	ft_atoi(const char *str)
 	}
 	return (get_long(&str[i], sign));
 }
-
-//#include <stdio.h>
-//
-//int main()
-//{
-//	printf("LONG_MAX + 1 EXP :%d\n", atoi("9223372036854775809"));
-//	printf("LONG_MAX + 1 ACT :%d\n", ft_atoi("9223372036854775809"));
-//	printf("LONG_MIN - 1 EXP :%d\n", atoi("-9223372036854775809"));
-//	printf("LONG_MIN - 1 ACT :%d\n", ft_atoi("-9223372036854775809"));
-//	printf("SIZE_MAX + 1 EXP :%d\n", atoi("18446744073709551616"));
-//	printf("SIZE_MAX + 1 ACT :%d\n", ft_atoi("18446744073709551616"));
-//	printf("SIZE_MAX - 1 EXP :%d\n", atoi("18446744073709551614"));
-//	printf("SIZE_MAX - 1 ACT :%d\n", ft_atoi("18446744073709551614"));
-//	return (0);
-//}

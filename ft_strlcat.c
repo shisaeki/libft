@@ -6,21 +6,21 @@
 /*   By: shisaeki <shisaeki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:57:02 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/20 14:06:31 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:14:35 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- 
+
 #include "libft.h"
 
 size_t	ft_strlcat(
-	char * restrict dst,
-	const char * restrict src,
+	char *restrict dst,
+	const char *restrict src,
 	size_t dstsize)
 {
-	char *d;
-	const char *s;
-	size_t n;
-	size_t len_dst;
+	char		*d;
+	const char	*s;
+	size_t		n;
+	size_t		len_dst;
 
 	d = dst;
 	s = src;
@@ -35,8 +35,7 @@ size_t	ft_strlcat(
 	{
 		if (n != 1)
 		{
-			*d = *s;
-			d++;
+			*d++ = *s;
 			n--;
 		}
 		s++;
