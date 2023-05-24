@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:54:27 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 15:06:47 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:18:21 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,10 @@ char	**ft_split(char const *s, char c)
 	int		index;
 	char	**split;
 
+	if (!s)
+		return (NULL);
 	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
+	if (!split)
 		return (NULL);
 	i = 0;
 	j = 0;
