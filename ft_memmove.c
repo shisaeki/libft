@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:44:32 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 14:36:27 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:56:30 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,11 @@ void	*ft_memmove(void *s1, const void *s2, size_t size)
 		return (NULL);
 	ptr_s1 = (unsigned char *)s1;
 	ptr_s2 = (unsigned char *)s2;
-	i = 0;
+	i = -1;
 	if (ptr_s1 <= ptr_s2)
 	{
-		while (i < size)
-		{
+		while (++i < size)
 			ptr_s1[i] = ptr_s2[i];
-			i++;
-		}
 	}
 	else
 	{

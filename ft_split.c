@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:54:27 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 15:18:21 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:58:57 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ char	**ft_split(char const *s, char c)
 	split = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
-	i = 0;
+	i = -1;
 	j = 0;
 	index = -1;
-	while (i <= ft_strlen(s))
+	while (++i <= ft_strlen(s))
 	{
 		if (s[i] != c && index < 0)
 			index = i;
@@ -72,7 +72,6 @@ char	**ft_split(char const *s, char c)
 			split[j++] = word_dup(s, index, i);
 			index = -1;
 		}
-		i++;
 	}
 	split[j] = NULL;
 	return (split);

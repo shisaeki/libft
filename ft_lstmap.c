@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:34:19 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 16:51:53 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 17:35:44 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!lst || !f || !del)
 		return (NULL);
 	head = NULL;
-	if (!(new = ft_lstnew(f(lst->content))))
-		return (NULL);
+	new = ft_lstnew(f(lst->content));
 	ft_lstadd_back(&head, new);
 	tail = head;
 	lst = lst->next;
 	while (lst)
 	{
-		if (!(new = ft_lstnew(f(lst->content))))
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
 			ft_lstclear(&head, del);
 			return (NULL);

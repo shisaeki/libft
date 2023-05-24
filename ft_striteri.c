@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:21:22 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 15:11:24 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:55:40 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
-	
+
 	if (!s || !f)
 		return ;
 	i = 0;
