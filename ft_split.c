@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:54:27 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 16:58:57 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 18:37:31 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	count_words(const char *str, char c)
 
 	i = 0;
 	trigger = 0;
+	if (!str)
+		return (-1);
 	while (*str)
 	{
 		if (*str != c && trigger == 0)
@@ -48,6 +50,20 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
+static void *free_split(char **split)
+{
+	size_t i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -55,10 +71,8 @@ char	**ft_split(char const *s, char c)
 	int		index;
 	char	**split;
 
-	if (!s)
-		return (NULL);
 	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!split)
+	if (!split || !s)
 		return (NULL);
 	i = -1;
 	j = 0;
@@ -69,7 +83,9 @@ char	**ft_split(char const *s, char c)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			split[j++] = word_dup(s, index, i);
+			split[j] = word_dup(s, index, i);
+			if (!split[j++])
+				return (free_split(split));
 			index = -1;
 		}
 	}
