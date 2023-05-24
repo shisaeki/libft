@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 14:40:56 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/22 16:03:57 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:12:54 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
+	if (!lst || !del)
 		return ;
 	del(lst->content);
 	free(lst);
