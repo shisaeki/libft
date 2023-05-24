@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:25:43 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 14:43:55 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 14:51:15 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (0);
-}
-
-#include <string.h>
-#include <stdio.h>
-
-int main()
-{
-	int ex = strncmp("", "AAAAAA", 6);
-	int ac = ft_strncmp("","AAAAAA", 6);
-
-	printf("%d\n", ex);
-	printf("%d\n", ac);
 	return (0);
 }

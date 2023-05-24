@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:40:47 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/22 18:03:40 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:01:39 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t			len_s;
 	unsigned int	i;
 
+	if (s == NULL)
+		return (NULL);
 	len_s = ft_strlen(s);
 	if (len_s < start)
 	{
@@ -25,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub[0] = '\0';
 		return (sub);
 	}
-	sub = (char *)malloc(sizeof(char) * len);
+	sub = (char *)malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);
 	i = 0;
@@ -34,5 +36,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub[i] = s[i + start];
 		i++;
 	}
+	sub[i] = '\0';
 	return (sub);
 }
