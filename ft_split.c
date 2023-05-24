@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:54:27 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 18:37:31 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/24 18:39:45 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-static void *free_split(char **split)
+static void	*free_split(char **split)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (split[i])
