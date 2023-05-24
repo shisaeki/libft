@@ -6,7 +6,7 @@
 #    By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 16:08:08 by shisaeki          #+#    #+#              #
-#    Updated: 2023/05/22 17:01:28 by shisaeki         ###   ########.fr        #
+#    Updated: 2023/05/24 16:26:04 by shisaeki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ BONUS_SRCS = ft_lstnew.c \
 			 ft_lstdelone.c \
 			 ft_lstclear.c \
 			 ft_lstiter.c \
+			 ft_lstmap.c \
 
 OBJS = $(SRCS:.c=.o)
 
