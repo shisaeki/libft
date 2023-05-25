@@ -6,15 +6,15 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 17:11:37 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/22 18:00:32 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:30:48 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	ft_strlcpy(
-		char *restrict dst,
-		const char *restrict src,
+		char *dst,
+		const char *src,
 		size_t dstsize)
 {
 	size_t	len;

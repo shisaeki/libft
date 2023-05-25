@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:03:49 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 16:28:47 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:30:57 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(
-			char *restrict dst,
-			char const *restrict src,
+			char *dst,
+			char const *src,
 			size_t dstsize);
-size_t	ft_strlcat(char *restrict dst,
-			char const *restrict src,
+size_t	ft_strlcat(char *dst,
+			char const *src,
 			size_t dstsize);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
@@ -45,7 +45,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void	*ft_memset(void *s, int c, size_t size);
 void	*ft_bzero(void *s, size_t size);
-void	*ft_memcpy(void *restrict s1, const void *restrict s2, size_t size);
+void	*ft_memcpy(void *s1, const void *s2, size_t size);
 void	*ft_memmove(void *s1, const void *s2, size_t size);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t size);

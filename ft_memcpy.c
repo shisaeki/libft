@@ -6,13 +6,13 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:33:10 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 14:25:56 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:31:44 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict s1, const void *restrict s2, size_t size)
+void	*ft_memcpy(void *s1, const void *s2, size_t size)
 {
 	unsigned char	*ptr_s1;
 	unsigned char	*ptr_s2;
