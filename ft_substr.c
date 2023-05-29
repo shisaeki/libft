@@ -6,7 +6,7 @@
 /*   By: shisaeki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:40:47 by shisaeki          #+#    #+#             */
-/*   Updated: 2023/05/24 15:01:39 by shisaeki         ###   ########.fr       */
+/*   Updated: 2023/05/29 13:52:33 by shisaeki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	len_s = ft_strlen(s);
 	if (len_s < start)
-	{
-		sub = (char *)malloc(sizeof(char));
-		sub[0] = '\0';
-		return (sub);
-	}
+		return (ft_strdup(""));
 	sub = (char *)malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < len && start + i < len_s)
 	{
 		sub[i] = s[i + start];
 		i++;
