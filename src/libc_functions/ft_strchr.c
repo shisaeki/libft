@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shinsaeki <shinsaeki@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 00:32:43 by shinsaeki         #+#    #+#             */
-/*   Updated: 2024/05/28 00:36:23 by shinsaeki        ###   ########.fr       */
+/*   Created: 2024/06/02 21:05:12 by shinsaeki         #+#    #+#             */
+/*   Updated: 2024/06/02 22:26:17 by shinsaeki        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
-#include <stdio.h>
+#include "../../include/libft.h"
 
-int	main()
+char	*ft_strchr(const char *s, int c)
 {
-	printf("%d\n", ft_isalpha('A'));
+	size_t	i;
+
+	i = 0;
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] == c)
+			return (char *) &s[i];
+		i++;
+	}
+	return (NULL);
 }
